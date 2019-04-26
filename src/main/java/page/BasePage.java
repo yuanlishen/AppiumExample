@@ -8,7 +8,13 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
     //查找元素     find是定位符
     static WebElement find(By locator){
-       return Driver.getCurrentDriver().findElement(locator);
+
+       try {
+           return Driver.getCurrentDriver().findElement(locator);
+       }catch(Exception e){
+           Driver.getCurrentDriver().findElement(text("下次再说")).click();
+           return Driver.getCurrentDriver().findElement(locator);
+       }
     }
     // locator 也是定位符
     static By locator(String locator){

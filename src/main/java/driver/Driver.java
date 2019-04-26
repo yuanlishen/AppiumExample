@@ -31,11 +31,11 @@ public class Driver {
             e.printStackTrace();
         }
         driver = new AndroidDriver(remoteUrl,capabilities);
-        driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     //因为我们要的是driver对象；
     //driver的get方法， 作用：随时给出driver
-    public static AppiumDriver getCurrentDriver(){
+    public static AppiumDriver<WebElement> getCurrentDriver(){
         //返回一个私有的对象
         return driver;
     }
