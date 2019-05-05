@@ -8,10 +8,11 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
     //查找元素     find是定位符
     static WebElement find(By locator){
-
+        //todo: 只是demo，更好的是根据弹窗列表进行批量检索
        try {
            return Driver.getCurrentDriver().findElement(locator);
        }catch(Exception e){
+           e.printStackTrace();
            Driver.getCurrentDriver().findElement(text("下次再说")).click();
            return Driver.getCurrentDriver().findElement(locator);
        }
